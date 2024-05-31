@@ -18,7 +18,7 @@ public class ByteServer implements Runnable {
         try (
             ServerSocket server = new ServerSocket(PORT)
         ) {
-            log.info("[서버] 서버 소켓이 생성되어 연결이 대기 중입니다.");
+            log.info("[서버] 소켓 서버가 준비되었습니다.");
 
             while (true) {
                 try (
@@ -26,7 +26,7 @@ public class ByteServer implements Runnable {
                     BufferedInputStream in = new BufferedInputStream(socket.getInputStream());
                     BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream())
                 ) {
-                    log.info("[서버] 클라이언트가 연결되었습니다.");
+                    log.info("[서버] 클라이언트가 연결되어 소켓이 생성되었습니다.");
                     byte[] buffer = new byte[BUFFER_SIZE];
                     int read = in.read(buffer);
 
