@@ -15,8 +15,9 @@ public class ByteServer implements Runnable {
 
     @Override
     public void run() {
-        try {
-            ServerSocket server = new ServerSocket(PORT);
+        try (
+            ServerSocket server = new ServerSocket(PORT)
+        ) {
             log.info("[서버] 서버 소켓이 생성되어 연결이 대기 중입니다.");
 
             while (true) {
