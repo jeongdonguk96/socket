@@ -1,9 +1,6 @@
 package io.spring.socket;
 
-import io.spring.socket.client.ByteClient;
-import io.spring.socket.client.TextClient;
 import io.spring.socket.server.ByteServer;
-import io.spring.socket.server.TextServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

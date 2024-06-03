@@ -23,9 +23,10 @@ public class SocketController {
 
     private Member createMember() {
         return Member.builder()
-                .name("정동욱")
-                .age(30)
+                .name("견민석")
+                .age(33)
                 .hobby("축구")
+                .position("윙어")
                 .build();
     }
 
