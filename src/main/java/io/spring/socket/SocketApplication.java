@@ -10,15 +10,8 @@ public class SocketApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SocketApplication.class, args);
 
-//		Thread textServerThread = new Thread(new TextServer());
-//		Thread textClientThread = new Thread(new TextClient());
-//		textServerThread.start();
-//		textClientThread.start();
-
 		Thread byteServerThread = new Thread(new ByteServer());
-//		Thread byteClientThread = new Thread(new ByteClient());
 		byteServerThread.start();
-//		byteClientThread.start();
 	}
 
 }
