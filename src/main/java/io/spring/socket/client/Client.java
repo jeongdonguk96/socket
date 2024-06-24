@@ -18,7 +18,7 @@ public class Client {
 
     public void sendMessage(Member member) {
         try (
-            Socket socket = new Socket("127.0.0.1", 59999);
+            Socket socket = new Socket("192.168.10.95", 59999);
             BufferedOutputStream out = new BufferedOutputStream(socket.getOutputStream());
             BufferedInputStream in = new BufferedInputStream(socket.getInputStream())
         ) {

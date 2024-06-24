@@ -1,5 +1,7 @@
 package io.spring.socket.server;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
@@ -7,11 +9,13 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 @Slf4j
+@RequiredArgsConstructor
 public class ByteServer implements Runnable {
 
     public static final int PORT = 59999;
     public static final int BUFFER_SIZE = 1024;
     private static final String RESPONSE = "Good Connection!";
+    private final ObjectMapper mapper;
 
     @Override
     public void run() {
@@ -31,6 +35,9 @@ public class ByteServer implements Runnable {
                     if (read != -1) {
                         String message = new String(buffer, 0, read);
                         log.info("[서버] 클라이언트로부터 데이터를 요청받았습니다. 요청메시지 = {}", message);
+
+                        //TODO: ObjectMapper를 이용해 String을 객체로 변환
+
 
                         out.write(RESPONSE.getBytes());
                         out.flush();
